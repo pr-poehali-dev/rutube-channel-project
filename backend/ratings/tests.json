@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Save rating for article",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "article_id": 1,
+        "rating": 5
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "rating": 5
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get saved rating",
+      "method": "GET",
+      "path": "/?article_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "rating": 5
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
